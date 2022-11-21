@@ -1,0 +1,25 @@
+def binaryserch(mylist, num,start,stop): 
+    if start > stop: 
+        return False
+    else:
+        mid = (start+stop)//2 
+        if num == mylist[mid]:
+            return mid
+        elif num < mylist[mid]:
+            return binaryserch(mylist, num,start,mid-1)
+        else :
+            return binaryserch(mylist, num,mid+1,stop)
+
+
+mylist = [10,12,13,15,20,54,73,89]
+
+num = 20 # шукаємо цифру 20
+
+#start = 0
+#stop = len(mylist)
+x=  binaryserch(mylist, num,0, len(mylist))#
+
+if x == False:
+    print(num,"Not found")
+else:
+    print(num, "Found at Index",x)
